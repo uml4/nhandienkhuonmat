@@ -1,0 +1,14 @@
+python extract_embeddings.py --dataset dataset --embeddings output/embeddings.pickle --detector face_detection_model 	--embedding-model openface_nn4.small2.v1.t7
+
+python train_model.py --embeddings output/embeddings.pickle  --recognizer output/recognizer.pickle 	--le output/le.pickle
+
+
+python recognize_video.py --detector face_detection_model \
+	--embedding-model openface_nn4.small2.v1.t7 \
+	--recognizer output/recognizer.pickle \
+	--le output/le.pickle
+
+
+Chạy theo thư tự các file 01_ ,, 02, 03, 04
+
+01_face_detection_capture.py để lấy được khuôn mặt chính xác hơn
